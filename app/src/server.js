@@ -156,7 +156,7 @@ const hostCfg = {
 
 // JWT config
 const jwtCfg = {
-    JWT_KEY: process.env.JWT_KEY || 'mirotalk_jwt_secret',
+    JWT_KEY: process.env.JWT_KEY || 'connectly_jwt_secret',
     JWT_EXP: process.env.JWT_EXP || '1h',
 };
 
