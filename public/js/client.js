@@ -680,7 +680,7 @@ let isHostProtected = false; // Username and Password required to initialize roo
 let isPeerAuthEnabled = false; // Username and Password required in the URL params to join room
 
 // survey
-let surveyActive = true; // when leaving the room give a feedback, if false will be redirected to newcall page
+let surveyActive = false; // when leaving the room give a feedback, if false will be redirected to newcall page
 let surveyURL = 'https://www.questionpro.com/t/AUs7VZq00L';
 
 // Redirect on leave room
