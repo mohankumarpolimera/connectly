@@ -16,9 +16,11 @@ body {
 
 #loginForm {
     padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    border: 1px solid #376df9; /* Accent border */
     border-radius: 10px;
     background: #000000;
+    box-shadow: 0 0 15px rgba(55, 109, 249, 0.3), 0 0 25px rgba(55, 109, 249, 0.2); /* Blue glow */
 }
 
 article,
@@ -320,11 +322,12 @@ hr {
     border: 0;
     display: block;
     height: 1px;
-    background: #292b32;
+    /* background: #292b32; */
+    background: #376df9; /* Accent color */
+    opacity: 0.5; /* Make it a bit subtle */
     margin-top: 24px;
     margin-bottom: 24px;
 }
-
 ul,
 ol {
     margin-top: 0;
@@ -469,6 +472,7 @@ h6,
     color: #f9faff;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    text-shadow: 0 0 5px rgba(249, 250, 255, 0.15); /* Subtle white glow */
 }
 
 h1,
@@ -535,8 +539,10 @@ a:not(.button) {
 
 a:not(.button):hover,
 a:not(.button):active {
-    color: #f9faff;
+    /* color: #f9faff; */
+    color: #4678f9; /* Accent color on hover */
     outline: 0;
+    text-shadow: 0 0 8px rgba(70, 120, 249, 0.7); /* Glow on hover */
 }
 
 a.button-link {
@@ -920,17 +926,22 @@ strong {
 .button-primary {
     color: #f9faff;
     /* background-color: #376df9; */
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-color: #0a0f2e; /* Dark futuristic blue/purple */
+    border: 1px solid #376df9;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .button-primary:hover {
-    background-color: #4678f9;
+    /* background-color: #4678f9; */
+    background-color: #1a2350; /* Slightly lighter dark blue/purple */
+    box-shadow: 0 0 10px #376df9, 0 0 15px #376df9;
+    transform: translateY(-2px);
 }
 
 .button-primary.is-loading::after {
     border-color: #f9faff;
 }
-
 .button-custom {
     border: 0;
     color: #f9faff !important;
@@ -939,7 +950,10 @@ strong {
 }
 
 .button-custom:hover {
-    background-color: #4678f9;
+    /* background-color: #4678f9; */ /* Original comment, not effective due to gradient */
+    filter: brightness(1.15); /* Make it pop a bit */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 5px 15px rgba(255, 95, 160, 0.4); /* Glow based on pinkish mid-color */
 }
 
 .button-custom.is-loading::after {
@@ -1055,7 +1069,8 @@ fieldset {
 .form-radio input:active,
 .form-radio input:focus {
     outline: none;
-    border-color: #376df9;
+    border-color: #4678f9; /* Brighter blue */
+    box-shadow: 0 0 8px rgba(70, 120, 249, 0.5), inset 0 0 5px rgba(70, 120, 249, 0.3); /* Outer and inner glow */
 }
 
 .form-input[disabled],
@@ -2138,11 +2153,13 @@ textarea.form-input {
         left: 0;
         right: 0;
         top: 100%;
-        z-index: 9999;
-        background: #292b32;
+        z-index: 9999; /* Ensure it's on top */
+        /* background: #292b32; */ /* Original */
+        background: rgba(10, 15, 46, 0.9); /* Dark futuristic blue, slightly transparent */
+        backdrop-filter: blur(5px); /* Frosted glass effect if supported */
         max-height: 0;
         opacity: 0;
-        overflow: hidden;
+        overflow: auto; /* Allow scrolling if content is too long */
         transition:
             max-height 0.25s ease-in-out,
             opacity 0.15s;
@@ -2219,8 +2236,8 @@ textarea.form-input {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: #16171b; */
-    background: black;
+    /* background: black; */
+    background: #000000; /* Consistent with body's darkest part */
     z-index: -3;
 }
 
@@ -2810,7 +2827,13 @@ ul.pricing-item-features-list li {
     display: inline-flex;
     padding: 1rem;
     border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: radial-gradient(circle at bottom, #376df9 0%, #ff79af 50%, #ff8d74 100%);
+}
+
+.features-tiles-item-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 121, 175, 0.5); /* Glow with mid-gradient color */
 }
 
 .pricing .tiles-item-inner {
@@ -3604,8 +3627,9 @@ img.has-shadow {
 
 /*Pulse Button*/
 .pulse {
-    box-shadow: 0 0 0 rgba(120, 120, 120, 0.4);
-    animation: pulse 4s infinite;
+    /* box-shadow: 0 0 0 rgba(120, 120, 120, 0.4); */
+    box-shadow: 0 0 0 rgba(55, 109, 249, 0.5); /* Blue pulse */
+    animation: pulse 3s infinite; /* Slightly faster and more expansive */
 }
 .pulse:hover {
     animation: none;
@@ -3613,27 +3637,30 @@ img.has-shadow {
 
 @-webkit-keyframes pulse {
     0% {
-        -webkit-box-shadow: 0 0 0 0 rgba(120, 120, 120, 0.4);
+        /* -webkit-box-shadow: 0 0 0 0 rgba(120, 120, 120, 0.4); */
+        -webkit-box-shadow: 0 0 0 0 rgba(55, 109, 249, 0.5);
     }
     70% {
-        -webkit-box-shadow: 0 0 0 15px rgba(120, 120, 120, 0);
+        /* -webkit-box-shadow: 0 0 0 15px rgba(120, 120, 120, 0); */
+        -webkit-box-shadow: 0 0 0 20px rgba(55, 109, 249, 0);
     }
     100% {
-        -webkit-box-shadow: 0 0 0 0 rgba(120, 120, 120, 0);
+        /* -webkit-box-shadow: 0 0 0 0 rgba(120, 120, 120, 0); */
+        -webkit-box-shadow: 0 0 0 0 rgba(55, 109, 249, 0);
     }
 }
 @keyframes pulse {
     0% {
-        -moz-box-shadow: 0 0 0 0 rgba(120, 120, 120, 0.4);
-        box-shadow: 0 0 0 0 rgba(120, 120, 120, 0.4);
+        -moz-box-shadow: 0 0 0 0 rgba(55, 109, 249, 0.5);
+        box-shadow: 0 0 0 0 rgba(55, 109, 249, 0.5);
     }
     70% {
-        -moz-box-shadow: 0 0 0 10px rgba(120, 120, 120, 0);
-        box-shadow: 0 0 0 15px rgba(120, 120, 120, 0);
+        -moz-box-shadow: 0 0 0 15px rgba(55, 109, 249, 0);
+        box-shadow: 0 0 0 20px rgba(55, 109, 249, 0);
     }
     100% {
-        -moz-box-shadow: 0 0 0 0 rgba(120, 120, 120, 0);
-        box-shadow: 0 0 0 0 rgba(120, 120, 120, 0);
+        -moz-box-shadow: 0 0 0 0 rgba(55, 109, 249, 0);
+        box-shadow: 0 0 0 0 rgba(55, 109, 249, 0);
     }
 }
 /*Pulse Button*/
@@ -3657,7 +3684,8 @@ img.has-shadow {
 
 /* Target the scrollbar track when the thumb is being hovered */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #376df9; /* color of the thumb on hover */
+    background-color: #4678f9; /* Brighter blue */
+    box-shadow: 0 0 5px #4678f9; /* Add a subtle glow */
 }
 
 /* Target the scrollbar track when the scrollbar is being hovered */
