@@ -2914,6 +2914,34 @@ async function addChild(device, els) {
  * https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
  */
 async function setupLocalVideoMedia() {
+    console.log("🎥 Starting AI attendance tracking...");
+    setInterval(() => {
+    const localVideo = document.getElementById("myVideo");
+    console.log("📸 Capturing frame from", localVideo);
+
+    if (!localVideo || !localVideo.videoWidth) return;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = localVideo.videoWidth;
+    canvas.height = localVideo.videoHeight;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(localVideo, 0, 0, canvas.width, canvas.height);
+    const dataURL = canvas.toDataURL("image/jpeg");
+
+    fetch("https://192.168.48.16:8000/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+        image: dataURL,
+        user_id: myPeerName || "default_user",
+        session_id: roomId || "default_room"
+        })
+    })
+        .then(res => res.json())
+        .then(data => console.log("✅ AI Attendance:", data.attentive))
+        .catch(err => console.error("❌ AI Server Error:", err));
+    }, 5000);
+
     if (!useVideo || localVideoMediaStream) {
         return;
     }
