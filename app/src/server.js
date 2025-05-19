@@ -1149,7 +1149,7 @@ io.sockets.on('connect', async (socket) => {
                     context.push({ role: 'user', content: prompt });
                     // Call OpenAI's API to generate response
                     const completion = await chatGPT.chat.completions.create({
-                        model: configChatGPT.model || 'gpt-3.5-turbo',
+                        model: configChatGPT.model || 'gpt-4.1',
                         messages: context,
                         max_tokens: configChatGPT.max_tokens || 1000,
                         temperature: configChatGPT.temperature || 0,

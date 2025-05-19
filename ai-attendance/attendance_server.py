@@ -13,7 +13,7 @@ from ultralytics import YOLO
 yolo_model = YOLO("yolov8l.pt")
 
 # Host token (simple authentication)
-HOST_TOKEN = "my-secret-token"  # Change to a secure value
+HOST_TOKEN = "Hlo"  # Change to a secure value
 
 # FastAPI app setup
 app = FastAPI()
