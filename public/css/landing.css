@@ -16,12 +16,12 @@ body {
 
 #loginForm {
     padding: 40px;
-    /* border: 1px solid rgba(255, 255, 255, 0.2); */
-    border: 1px solid #376df9; /* Accent border */
+    border: 1px solid #000000; /* Accent border */
     border-radius: 10px;
-    background: #000000;
-    box-shadow: 0 0 15px rgba(55, 109, 249, 0.3), 0 0 25px rgba(55, 109, 249, 0.2); /* Blue glow */
+    background: linear-gradient(100deg, #4a3a37 0%, #9a7b73 60%, #f2e5e1 100%); /* Soft brown-pink gradient */
+    /* box-shadow: 0 0 15px rgba(55, 109, 249, 0.3), 0 0 25px rgba(55, 109, 249, 0.2); Blue glow */
 }
+
 
 article,
 aside,
@@ -924,20 +924,19 @@ strong {
 }
 
 .button-primary {
-    color: #f9faff;
-    /* background-color: #376df9; */
-    /* background-color: #000000; */
-    background-color: #0a0f2e; /* Dark futuristic blue/purple */
-    border: 1px solid #376df9;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    color: #ffffff;
+    background: linear-gradient(100deg, #4a3a37 0%, #9a7b73 60%, #f2e5e1 100%);
+    border: 1px solid #9a7b73;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+
 .button-primary:hover {
-    /* background-color: #4678f9; */
-    background-color: #1a2350; /* Slightly lighter dark blue/purple */
-    box-shadow: 0 0 10px #376df9, 0 0 15px #376df9;
-    transform: translateY(-2px);
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: none;
 }
+
 
 .button-primary.is-loading::after {
     border-color: #f9faff;
@@ -2795,7 +2794,8 @@ ul.pricing-item-features-list li {
     max-width: 100%;
     height: 1024px;
     /* background-image: url(../images/illustration-section-01.svg); */
-    background-image: url(../images/bg.svg);
+    /* background-image: url(../images/bg.svg); */
+    background-image: url(../images/b6.jpg);
     background-repeat: no-repeat;
     background-size: cover; /*auto*/
     left: 50%;
@@ -2969,9 +2969,10 @@ ul.pricing-item-features-list li.is-checked::after {
 .cta-inner {
     padding-left: 16px;
     padding-right: 16px;
-    background-color: #376df9;
-    background: linear-gradient(100deg, #376df9 0, #ff5fa0 75%, #ffc55a 100%);
+    background: linear-gradient(100deg, #2b2828 0%, #69504a 60%, #edcdc3 100%); /* Soft brown-pink gradient */
 }
+
+
 
 @media (min-width: 641px) {
     .cta .form-input {
