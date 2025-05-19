@@ -3,18 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>MiroTalk Iframe demo</title>
+        <title>Connectly Iframe demo</title>
 
-        <!-- Replace p2p.mirotalk.com with YOUR-DOMAIN-NAME -->
-        <script src="https://p2p.mirotalk.com/js/iframe.js" defer></script>
+        <!-- Replace p2p.Connectly.com with YOUR-DOMAIN-NAME -->
+        <script src="https://p2p.connectly.com/js/iframe.js" defer></script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const domain = 'p2p.mirotalk.com'; // YOUR-DOMAIN-NAME
+                const domain = 'p2p.Connectly.com'; // YOUR-DOMAIN-NAME
                 const options = {
                     room: 'test',
-                    name: 'mirotalk',
-                    avatar: 'https://p2p.mirotalk.com/images/mirotalk-logo.png',
+                    name: 'Connectly',
+                    avatar: 'https://p2p.Connectly.com/images/Connectly-logo.png',
                     audio: 0,
                     video: 0,
                     screen: 0,
@@ -24,7 +24,7 @@
                     width: '100vw',
                     height: '100vh',
                     parentNode: document.querySelector('#meet'),
-                }; // https://docs.mirotalk.com/mirotalk-p2p/join-room/
+                }; // https://docs.Connectly.com/Connectly-p2p/join-room/
                 const api = new IframeApi(domain, options);
             });
         </script>
