@@ -6,18 +6,6 @@
  ██████ ███████ ██ ███████ ██   ████    ██   
 */
 
-/**
- * MiroTalk P2P - Client component
- *
- * @link    GitHub: https://github.com/miroslavpejic85/mirotalk
- * @link    Official Live demo: https://p2p.mirotalk.com
- * @license For open source use: AGPLv3
- * @license For commercial use or closed source, contact us at license.mirotalk@gmail.com or purchase directly from CodeCanyon
- * @license CodeCanyon: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
- * @author  Miroslav Pejic - miroslav.pejic.85@gmail.com
- * @version 1.5.09
- *
- */
 
 'use strict';
 
@@ -45,10 +33,10 @@ const images = {
     message: '../images/message.png',
     leave: '../images/leave-room.png',
     vaShare: '../images/va-share.png',
-    about: '../images/mirotalk-logo.gif',
+    // about: '../images/mirotalk-logo.gif',
     feedback: '../images/feedback.png',
     forbidden: '../images/forbidden.png',
-    avatar: '../images/mirotalk-logo.png',
+    // avatar: '../images/mirotalk-logo.png',
     recording: '../images/recording.png',
     poster: '../images/loader.gif',
 }; // nice free icon: https://www.iconfinder.com
@@ -1511,7 +1499,7 @@ async function whoAreYou() {
         allowOutsideClick: false,
         allowEscapeKey: false,
         background: swBg,
-        title: brand.app?.name || 'MiroTalk P2P',
+        title: brand.app?.name || 'Connectly P2P',
         position: 'center',
         input: 'text',
         inputPlaceholder: 'Enter your email or name',
@@ -6460,7 +6448,7 @@ function shareRoomByEmail() {
             const selectedDateTime = document.getElementById('datetimePicker').value;
             const roomPassword = isRoomLocked && thisRoomPassword ? 'Password: ' + thisRoomPassword + newLine : '';
             const email = '';
-            const emailSubject = `Please join our MiroTalk P2P Video Chat Meeting`;
+            const emailSubject = `Please join our Connectly P2P Video Chat Meeting`;
             const emailBody = `The meeting is scheduled at: ${newLine} DateTime: ${selectedDateTime} ${newLine}${roomPassword}Click to join: ${roomURL} ${newLine}`;
             document.location = 'mailto:' + email + '?subject=' + emailSubject + '&body=' + emailBody;
         },
@@ -10583,7 +10571,7 @@ function selectFileToShare(peer_id, broadcast = false) {
     Swal.fire({
         allowOutsideClick: false,
         background: swBg,
-        imageAlt: 'mirotalk-file-sharing',
+        imageAlt: 'Connectly-file-sharing',
         imageUrl: images.share,
         position: 'center',
         title: 'Share file',
@@ -10790,7 +10778,7 @@ function endDownload() {
                 title: 'Received file',
                 text: incomingFileInfo.file.fileName + ' size ' + bytesToSize(incomingFileInfo.file.fileSize),
                 imageUrl: e.target.result,
-                imageAlt: 'mirotalk-file-img-download',
+                imageAlt: 'Connectly-file-img-download',
                 showDenyButton: true,
                 confirmButtonText: `Save`,
                 denyButtonText: `Cancel`,
@@ -10807,7 +10795,7 @@ function endDownload() {
         Swal.fire({
             allowOutsideClick: false,
             background: swBg,
-            imageAlt: 'mirotalk-file-download',
+            imageAlt: 'Connectly-file-download',
             imageUrl: images.share,
             position: 'center',
             title: 'Received file',
@@ -11180,7 +11168,7 @@ function handleKickedOut(config) {
 }
 
 /**
- * MiroTalk about info
+ * Connectly about info
  */
 function showAbout() {
     playSound('newMessage');
@@ -11218,12 +11206,12 @@ function showAbout() {
                         <a 
                             id="email-button" 
                             data-umami-event="Email button" 
-                            href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
+                            href="mailto:miroslav.pejic.85@gmail.com?subject=Connectly P2P info"> 
                             miroslav.pejic.85@gmail.com
                         </a>
                         <br /><br />
                         <hr />
-                        <span>&copy; 2025 MiroTalk P2P, all rights reserved</span>
+                        <span>&copy; 2025 Connectly P2P, all rights reserved</span>
                         <hr />
                         `
                 }
@@ -11257,7 +11245,7 @@ function leaveFeedback() {
         background: swBg,
         imageUrl: images.feedback,
         title: 'Leave a feedback',
-        text: 'Do you want to rate your MiroTalk experience?',
+        text: 'Do you want to rate your Connectly experience?',
         confirmButtonText: `Yes`,
         denyButtonText: `No`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },

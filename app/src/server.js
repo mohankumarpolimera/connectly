@@ -36,18 +36,6 @@ dependencies: {
 }
 */
 
-/**
- * MiroTalk P2P - Server component
- *
- * @link    GitHub: https://github.com/miroslavpejic85/mirotalk
- * @link    Official Live demo: https://p2p.mirotalk.com
- * @license For open source use: AGPLv3
- * @license For commercial use or closed source, contact us at license.mirotalk@gmail.com or purchase directly from CodeCanyon
- * @license CodeCanyon: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
- * @author  Miroslav Pejic - miroslav.pejic.85@gmail.com
- * @version 1.5.09
- *
- */
 
 'use strict'; // https://www.w3schools.com/js/js_strict.asp
 
@@ -145,7 +133,7 @@ const io = new Server({
 // Host protection (disabled by default)
 const hostProtected = getEnvBoolean(process.env.HOST_PROTECTED);
 const userAuth = getEnvBoolean(process.env.HOST_USER_AUTH);
-const hostUsersString = process.env.HOST_USERS || '[{"username": "MiroTalk", "password": "P2P"}]';
+const hostUsersString = process.env.HOST_USERS || '[{"username": "Connectly", "password": "P2P"}]';
 const hostUsers = JSON.parse(hostUsersString);
 const hostCfg = {
     protected: hostProtected,
@@ -161,7 +149,7 @@ const jwtCfg = {
 };
 
 // Room presenters
-const roomPresentersString = process.env.PRESENTERS || '["MiroTalk P2P"]';
+const roomPresentersString = process.env.PRESENTERS || '["Connectly P2P"]';
 const roomPresenters = JSON.parse(roomPresentersString);
 
 // Swagger config
@@ -557,7 +545,7 @@ app.get('/stats', (req, res) => {
     res.send(statsData);
 });
 
-// mirotalk about
+// Connectly about
 app.get(['/about'], (req, res) => {
     res.sendFile(views.about);
 });
@@ -768,7 +756,7 @@ app.get('/:roomId', (req, res) => {
 });
 
 /**
-    MiroTalk API v1
+    Connectly API v1
     For api docs we use: https://swagger.io/
 */
 
@@ -784,7 +772,7 @@ app.get(`${apiBasePath}/stats`, (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get stats - Unauthorized', {
+        log.debug('Connectly get stats - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -799,7 +787,7 @@ app.get(`${apiBasePath}/stats`, (req, res) => {
         totalPeers,
     });
     // log.debug the output if all done
-    log.debug('MiroTalk get stats - Authorized', {
+    log.debug('Connectly get stats - Authorized', {
         header: req.headers,
         body: req.body,
         timestamp,
@@ -820,7 +808,7 @@ app.post(`${apiBasePath}/token`, (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get token - Unauthorized', {
+        log.debug('Connectly get token - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -830,7 +818,7 @@ app.post(`${apiBasePath}/token`, (req, res) => {
     const token = api.getToken(req.body);
     res.json({ token: token });
     // log.debug the output if all done
-    log.debug('MiroTalk get token - Authorized', {
+    log.debug('Connectly get token - Authorized', {
         header: req.headers,
         body: req.body,
         token: token,
@@ -849,7 +837,7 @@ app.get(`${apiBasePath}/meetings`, (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get meetings - Unauthorized', {
+        log.debug('Connectly get meetings - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -859,7 +847,7 @@ app.get(`${apiBasePath}/meetings`, (req, res) => {
     const meetings = api.getMeetings(peers);
     res.json({ meetings: meetings });
     // log.debug the output if all done
-    log.debug('MiroTalk get meetings - Authorized', {
+    log.debug('Connectly get meetings - Authorized', {
         header: req.headers,
         body: req.body,
         meetings: meetings,
@@ -877,7 +865,7 @@ app.post(`${apiBasePath}/meeting`, (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get meeting - Unauthorized', {
+        log.debug('Connectly get meeting - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -885,7 +873,7 @@ app.post(`${apiBasePath}/meeting`, (req, res) => {
     }
     const meetingURL = api.getMeetingURL();
     res.json({ meeting: meetingURL });
-    log.debug('MiroTalk get meeting - Authorized', {
+    log.debug('Connectly get meeting - Authorized', {
         header: req.headers,
         body: req.body,
         meeting: meetingURL,
@@ -903,7 +891,7 @@ app.post(`${apiBasePath}/join`, (req, res) => {
     const { host, authorization } = req.headers;
     const api = new ServerApi(host, authorization, api_key_secret);
     if (!api.isAuthorized()) {
-        log.debug('MiroTalk get join - Unauthorized', {
+        log.debug('Connectly get join - Unauthorized', {
             header: req.headers,
             body: req.body,
         });
@@ -911,7 +899,7 @@ app.post(`${apiBasePath}/join`, (req, res) => {
     }
     const joinURL = api.getJoinURL(req.body);
     res.json({ join: joinURL });
-    log.debug('MiroTalk get join - Authorized', {
+    log.debug('Connectly get join - Authorized', {
         header: req.headers,
         body: req.body,
         join: joinURL,
@@ -919,7 +907,7 @@ app.post(`${apiBasePath}/join`, (req, res) => {
 });
 
 /*
-    MiroTalk Slack app v1
+    Connectly Slack app v1
     https://api.slack.com/authentication/verifying-requests-from-slack
 */
 
@@ -967,7 +955,7 @@ function getMeetingURL(host) {
     return 'http' + (host.includes('localhost') ? '' : 's') + '://' + host + '/join/' + uuidV4();
 }
 
-// end of MiroTalk API v1
+// end of Connectly API v1
 
 // not match any of page before, so 404 not found
 app.use((req, res) => {

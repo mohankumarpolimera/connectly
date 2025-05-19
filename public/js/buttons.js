@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Configuration for controlling the visibility of buttons in the MiroTalk P2P client.
+ * Configuration for controlling the visibility of buttons in the Connectly P2P client.
  * Set properties to true to show the corresponding buttons, or false to hide them.
  * captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn, showVideoPipBtn, showDocumentPipBtn -> (auto-detected).
  */

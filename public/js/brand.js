@@ -23,15 +23,6 @@ const appDescription = document.getElementById('appDescription');
 const appJoinDescription = document.getElementById('appJoinDescription');
 const joinRoomBtn = document.getElementById('joinRoomButton');
 const appJoinLastRoom = document.getElementById('appJoinLastRoom');
-
-const features = document.getElementById('features');
-const browsers = document.getElementById('browsers');
-const teams = document.getElementById('teams');
-const tryEasier = document.getElementById('tryEasier');
-const poweredBy = document.getElementById('poweredBy');
-const sponsors = document.getElementById('sponsors');
-const advertisers = document.getElementById('advertisers');
-const footer = document.getElementById('footer');
 //...
 
 // Brand customizations...
@@ -39,8 +30,8 @@ const footer = document.getElementById('footer');
 let brand = {
     app: {
         language: 'en',
-        name: 'MiroTalk',
-        title: 'MiroTalk<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
+        name: 'Connectly',
+        title: 'Connectly<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
         description:
             'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
         joinDescription: 'Pick a room name.<br />How about this one?',
@@ -50,58 +41,58 @@ let brand = {
     site: {
         shortcutIcon: '../images/logo.svg',
         appleTouchIcon: '../images/logo.svg',
-        landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
+        landingTitle: 'Connectly a Free Secure Video Calls, Chat & Screen Sharing.',
+        newCallTitle: 'Connectly a Free Secure Video Calls, Chat & Screen Sharing.',
         newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
         newCallRoomDescription:
             "Each room has its disposable URL. Just pick a room name and share your custom URL. It's that easy.",
-        loginTitle: 'MiroTalk - Host Protected login required.',
-        clientTitle: 'MiroTalk WebRTC Video call, Chat Room & Screen Sharing.',
-        privacyPolicyTitle: 'MiroTalk - privacy and policy.',
+        loginTitle: 'Connectly - Host Protected login required.',
+        clientTitle: 'Connectly WebRTC Video call, Chat Room & Screen Sharing.',
+        privacyPolicyTitle: 'Connectly - privacy and policy.',
         stunTurnTitle: 'Test Stun/Turn Servers.',
-        notFoundTitle: 'MiroTalk - 404 Page not found.',
+        notFoundTitle: 'Connectly - 404 Page not found.',
     },
     html: {
         features: true,
-        browsers: true,
-        teams: true, // please keep me always true ;)
+        browsers: false,
+        teams: false, 
         tryEasier: true,
-        poweredBy: true,
-        sponsors: true,
-        advertisers: true,
-        footer: true,
+        poweredBy: false,
+        sponsors: false,
+        advertisers: false,
+        footer: false,
     },
-    about: {
-        imageUrl: '../images/mirotalk-logo.gif',
-        title: 'WebRTC P2P v1.5.09',
-        html: `
-            <button 
-                id="support-button" 
-                data-umami-event="Support button" 
-                onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
-                <i class="fas fa-heart" ></i>&nbsp;Support
-            </button>
-            <br /><br /><br />
-            Author:<a 
-                id="linkedin-button" 
-                data-umami-event="Linkedin button" 
-                href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" target="_blank"> 
-                Miroslav Pejic
-            </a>
-            <br /><br />
-            Email:<a 
-                id="email-button" 
-                data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
-                miroslav.pejic.85@gmail.com
-            </a>
-            <br /><br />
-            <hr />
-            <span>&copy; 2025 MiroTalk P2P, all rights reserved</span>
-            <hr />
-        `,
-    },
-    //...
+    // about: {
+    //     imageUrl: '../images/Connectly-logo.gif',
+    //     title: 'WebRTC P2P v1.5.09',
+    //     html: `
+    //         <button 
+    //             id="support-button" 
+    //             data-umami-event="Support button" 
+    //             onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
+    //             <i class="fas fa-heart" ></i>&nbsp;Support
+    //         </button>
+    //         <br /><br /><br />
+    //         Author:<a 
+    //             id="linkedin-button" 
+    //             data-umami-event="Linkedin button" 
+    //             href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" target="_blank"> 
+    //             Miroslav Pejic
+    //         </a>
+    //         <br /><br />
+    //         Email:<a 
+    //             id="email-button" 
+    //             data-umami-event="Email button" 
+    //             href="mailto:miroslav.pejic.85@gmail.com?subject=Connectly P2P info"> 
+    //             miroslav.pejic.85@gmail.com
+    //         </a>
+    //         <br /><br />
+    //         <hr />
+    //         <span>&copy; 2025 Connectly P2P, all rights reserved</span>
+    //         <hr />
+    //     `,
+    // },
+    // //...
 };
 
 /**

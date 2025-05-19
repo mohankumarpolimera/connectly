@@ -3,7 +3,7 @@
 const packageJson = require('../../package.json');
 
 module.exports = {
-    // Branding and customizations require a license: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
+    // Branding and customizations require a license: https://codecanyon.net/item/Connectly-p2p-webrtc-realtime-video-conferences/38376661
     brand: {
         app: {
             language: 'en', // https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
@@ -21,8 +21,8 @@ module.exports = {
             title: 'Click the link to start a call.',
             description:
                 'Connectly calling offers real-time HD quality and low latency, a step up from traditional tech.',
-            image: 'https://p2p.mirotalk.com/images/preview.png',
-            url: 'https://p2p.mirotalk.com',
+            image: 'https://p2p.Connectly.com/images/preview.png',
+            url: 'https://p2p.Connectly.com',
         },
         site: {
             shortcutIcon: '../images/logo.svg',
@@ -44,41 +44,10 @@ module.exports = {
             teams: true, // please keep me always true ;)
             tryEasier: true,
             poweredBy: true,
-            sponsors: true,
+            sponsors: false,
             advertisers: true,
-            footer: true,
+            footer: false,
         },
-        about: {
-            imageUrl: '../images/mirotalk-logo.gif',
-            title: `WebRTC P2P v${packageJson.version}`,
-            html: `
-                <button 
-                    id="support-button" 
-                    data-umami-event="Support button" 
-                    onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
-                    <i class="fas fa-heart" ></i>&nbsp;Support
-                </button>
-                <br /><br /><br />
-                Author:<a 
-                    id="linkedin-button" 
-                    data-umami-event="Linkedin button" 
-                    href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" target="_blank"> 
-                    Miroslav Pejic
-                </a>
-                <br />
-                Email:<a 
-                    id="email-button" 
-                    data-umami-event="Email button" 
-                    href="mailto:miroslav.pejic.85@gmail.com?subject=Connectly P2P info"> 
-                    miroslav.pejic.85@gmail.com
-                </a>
-                <br /><br />
-                <hr />
-                <span>&copy; 2025 Connectly P2P, all rights reserved</span>
-                <hr />
-            `,
-        },
-        //...
     },
     /**
      * Configuration for controlling the visibility of buttons in the MiroTalk P2P client.

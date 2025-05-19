@@ -1,6 +1,6 @@
-## Expose MiroTalk on HTTPS
+## Expose Connectly on HTTPS
 
-![mirotalk-https](https.png)
+![Connectly-https](https.png)
 
 Generate a [self-signed certificate](https://en.wikipedia.org/wiki/Self-signed_certificate)
 
